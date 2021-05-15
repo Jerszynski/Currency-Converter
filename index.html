@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" href="css/form.css" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+      integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+      crossorigin="anonymous"
+    />
+
+    <script defer src="js/script.js"></script>
+
+    <title>Currency Converter</title>
+  </head>
+
+  <body class="body">
+    <form class="js__form form">
+      <fieldset class="currency__fieldsetPLN">
+        <legend class="currency__legend">Przelicznik Polskiego Złotego</legend>
+        <ol class="currency__orderList">
+          <li class="currency__listItem">
+            <label class="currency__label">
+              <span class="currency__labelText">Wpisz kwotę*:</span>
+              <input
+                name="amount"
+                type="number"
+                min="1"
+                step="any"
+                class="fields js__input"
+                required
+              />
+            </label>
+          </li>
+          <li class="currency__listItem">
+            <label class="currency__label">
+              <span class="currency__labelText">Wybierz walutę*:</span>
+              <select name="currency" class="fields js__select" required>
+                <option value="">Select</option>
+                <option value="EUR">EUR</option>
+                <option value="USD">USD</option>
+                <option value="GBP">GBP</option>
+                <option value="CHF">CHF</option>
+              </select>
+            </label>
+          </li>
+        </ol>
+      </fieldset>
+
+      <p class="paragraph">
+        <button class="paragraph__item form__button js__count">Przelicz</button>
+        <button
+          class="paragraph__item form__button js__count js__reset"
+          type="reset"
+        >
+          Wyczyść
+        </button>
+      </p>
+
+      <fieldset class="currency__fieldsetPLN">
+        <legend class="currency__legend">Wynik</legend>
+        <p class="js__score"></p>
+      </fieldset>
+    </form>
+
+    <p class="fieldDescription">* - pola wymagane</p>
+  </body>
+</html>
