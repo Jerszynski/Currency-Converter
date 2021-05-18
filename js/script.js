@@ -1,45 +1,56 @@
-let amount = document.querySelector(".js__input");
-let score = document.querySelector(".js__score");
-let button = document.querySelector("js__count");
-let form = document.querySelector(".js__form");
-let select = document.querySelector(".js__select");
+{
+  const calcCurrency = (inputValue, currency) => {
+    const eurAmount = 4.36;
+    const usdAmount = 3.76;
+    const gbpAmount = 4.82;
+    const chfAmount = 4.16;
 
-let eurAmount = 4.36;
-let usdAmount = 3.76;
-let gbpAmount = 4.82;
-let chfAmount = 4.16;
+    switch (currency) {
+      case "EUR":
+        return inputValue / eurAmount;
 
-form.addEventListener("submit", (event) => {
-  event.preventDefault();
+      case "USD":
+        return inputValue / usdAmount;
 
-  let inputValue = +amount.value;
-  let choise = select.value;
-  let sum;
+      case "GBP":
+        return inputValue / gbpAmount;
 
-  switch (choise) {
-    case "EUR":
-      sum = inputValue / eurAmount;
-      break;
+      case "CHF":
+        return inputValue / chfAmount;
+    }
+  };
 
-    case "USD":
-      sum = inputValue / usdAmount;
-      break;
+  const score = document.querySelector(".js__score");
+  const clearFormOnClick = () => {
+    score.innerHTML !== ""
+      ? (score.innerHTML = "")
+      : (score.innerHTML = "Something were wrong!");
+  };
 
-    case "GBP":
-      sum = inputValue / gbpAmount;
-      break;
+  const updateResult = (inputValue, sum, currency) => {
+    score.innerHTML = `${inputValue} PLN = ${sum.toFixed(2)} ${currency}`;
+  };
 
-    case "CHF":
-      sum = inputValue / chfAmount;
-      break;
-  }
-  score.innerHTML = `${inputValue} PLN = ${sum.toFixed(2)} ${select.value}`;
-});
+  const formSubmit = (event) => {
+    event.preventDefault();
 
-let reset = document.querySelector(".js__reset");
+    const amount = document.querySelector(".js__input");
+    const select = document.querySelector(".js__select");
 
-reset.addEventListener("click", () => {
-  score.innerHTML !== ""
-    ? (score.innerHTML = "")
-    : (score.innerHTML = "Something were wrong!");
-});
+    const inputValue = +amount.value;
+    const currency = select.value;
+
+    const sum = calcCurrency(inputValue, currency);
+
+    updateResult(inputValue, sum, currency);
+  };
+
+  const init = () => {
+    const clearForm = document.querySelector(".js__reset");
+    clearForm.addEventListener("click", clearFormOnClick);
+
+    const form = document.querySelector(".js__form");
+    form.addEventListener("submit", formSubmit);
+  };
+  init();
+}
