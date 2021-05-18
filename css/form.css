@@ -2,18 +2,21 @@
   /* margin: 100px 8px; */
   margin: 60px auto;
   background-color: rgba(255, 255, 255, 0.25);
-  max-width: 1200px;
+  max-width: 900px;
   padding: 10px;
   border-radius: 20px;
 }
 
 .currency__fieldsetPLN {
-  margin: 25px 0;
+  margin: 25px auto;
   padding: 10px;
+  max-width: 600px;
   border-radius: 20px;
   box-shadow: 2px 2px 8px gray;
   border: none;
   background-color: whitesmoke;
+  display: flex;
+  justify-content: center;
 }
 
 .currency__legend {
