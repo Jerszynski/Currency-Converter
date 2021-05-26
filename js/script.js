@@ -20,22 +20,20 @@
     }
   };
 
-  const score = document.querySelector(".js__score");
+  const score = document.querySelector(".js-score");
   const clearFormOnClick = () => {
-    score.innerHTML !== ""
-      ? (score.innerHTML = "")
-      : (score.innerHTML = "Something were wrong!");
+    score.innerHTML = "";
   };
 
   const updateResult = (inputValue, sum, currency) => {
     score.innerHTML = `${inputValue} PLN = ${sum.toFixed(2)} ${currency}`;
   };
 
-  const formSubmit = (event) => {
+  const onformSubmit = (event) => {
     event.preventDefault();
 
-    const amount = document.querySelector(".js__input");
-    const select = document.querySelector(".js__select");
+    const amount = document.querySelector(".js-input");
+    const select = document.querySelector(".js-select");
 
     const inputValue = +amount.value;
     const currency = select.value;
@@ -46,11 +44,11 @@
   };
 
   const init = () => {
-    const clearForm = document.querySelector(".js__reset");
+    const clearForm = document.querySelector(".js-reset");
     clearForm.addEventListener("click", clearFormOnClick);
 
-    const form = document.querySelector(".js__form");
-    form.addEventListener("submit", formSubmit);
+    const form = document.querySelector(".js-form");
+    form.addEventListener("submit", onformSubmit);
   };
   init();
 }

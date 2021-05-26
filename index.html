@@ -26,53 +26,53 @@
   </head>
 
   <body class="body">
-    <form class="js__form form">
-      <fieldset class="currency__fieldsetPLN">
-        <legend class="currency__legend">Przelicznik Polskiego Złotego</legend>
-        <ol class="currency__orderList">
-          <li class="currency__listItem">
-            <label class="currency__label">
-              <span class="currency__labelText">Wpisz kwotę*:</span>
-              <input
-                name="amount"
-                type="number"
-                min="1"
-                step="any"
-                class="fields js__input"
-                required
-              />
-            </label>
-          </li>
-          <li class="currency__listItem">
-            <label class="currency__label">
-              <span class="currency__labelText">Wybierz walutę*:</span>
-              <select name="currency" class="fields js__select" required>
-                <option value="">Select</option>
-                <option value="EUR">EUR</option>
-                <option value="USD">USD</option>
-                <option value="GBP">GBP</option>
-                <option value="CHF">CHF</option>
-              </select>
-            </label>
-          </li>
-        </ol>
+    <form class="currencyForm js-form">
+      <fieldset class="currencyForm__inputs">
+        <legend class="currencyForm__legend">
+          Przelicznik Polskiego Złotego
+        </legend>
+        <div class="currencyForm__InputContainer">
+          <label class="currencyForm__label">
+            <span class="currencyForm__labelText">Wpisz kwotę*:</span>
+            <input
+              name="amount"
+              type="number"
+              min="1"
+              step="any"
+              class="currencyForm__inputField js-input"
+              required
+            />
+          </label>
+
+          <label class="currencyForm__label">
+            <span class="currencyForm__labelText">Wybierz walutę*:</span>
+            <select
+              name="currency"
+              class="currencyForm__selectField js-select"
+              required
+            >
+              <option value="">Select</option>
+              <option value="EUR">EUR</option>
+              <option value="USD">USD</option>
+              <option value="GBP">GBP</option>
+              <option value="CHF">CHF</option>
+            </select>
+          </label>
+        </div>
       </fieldset>
 
-      <p class="paragraph">
-        <button class="paragraph__item form__button js__count">Przelicz</button>
-        <button
-          class="paragraph__item form__button js__count js__reset"
-          type="reset"
-        >
+      <div class="actionButtons">
+        <button class="actionButtons__item js-count">Przelicz</button>
+        <button class="actionButtons__item js-reset" type="reset">
           Wyczyść
         </button>
-      </p>
+      </div>
 
-      <fieldset class="currency__fieldsetPLN">
-        <legend class="currency__legend">Wynik</legend>
-        <p class="js__score"></p>
+      <fieldset class="currencyForm__score">
+        <legend class="currencyForm__legend">Wynik</legend>
+        <p class="currencyForm__outputScore js-score"></p>
       </fieldset>
-      <p class="fieldDescription">* - pola wymagane</p>
+      <p class="currencyForm__Description">* - pola wymagane</p>
     </form>
   </body>
 </html>
