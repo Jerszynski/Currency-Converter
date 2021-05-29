@@ -1,5 +1,5 @@
 {
-  const calcCurrency = (inputValue, currency) => {
+  const calculateCurrency = (inputValue, currency) => {
     const eurAmount = 4.36;
     const usdAmount = 3.76;
     const gbpAmount = 4.82;
@@ -25,22 +25,22 @@
     score.innerHTML = "";
   };
 
-  const updateResult = (inputValue, sum, currency) => {
-    score.innerHTML = `${inputValue} PLN = ${sum.toFixed(2)} ${currency}`;
+  const updateResult = (inputValue, result, currency) => {
+    score.innerHTML = `${inputValue} PLN = ${result.toFixed(2)} ${currency}`;
   };
 
   const onformSubmit = (event) => {
     event.preventDefault();
 
     const amount = document.querySelector(".js-input");
-    const select = document.querySelector(".js-select");
+    const currencyValue = document.querySelector(".js-select");
 
     const inputValue = +amount.value;
-    const currency = select.value;
+    const currency = currencyValue.value;
 
-    const sum = calcCurrency(inputValue, currency);
+    const result = calculateCurrency(inputValue, currency);
 
-    updateResult(inputValue, sum, currency);
+    updateResult(inputValue, result, currency);
   };
 
   const init = () => {

@@ -1,5 +1,5 @@
 .currencyForm {
-  margin: 60px auto;
+  margin: 60px auto 0;
   background-color: rgba(255, 255, 255, 0.25);
   max-width: 900px;
   padding: 10px;
@@ -9,7 +9,7 @@
 .currencyForm__inputs {
   margin: 25px auto;
   padding: 20px;
-  max-width: 600px;
+  max-width: 620px;
   border-radius: 20px;
   box-shadow: 2px 2px 12px rgb(40, 40, 40);
   border: none;
@@ -25,18 +25,27 @@
   font-weight: 700;
 }
 
+@media (max-width: 415px) {
+  .currencyForm__legend {
+    text-align: center;
+  }
+}
+
 .currencyForm__InputContainer {
   padding: 10px;
   text-align: center;
 }
 
-.currencyForm__label {
-  padding: 5px;
+@media (min-width: 375px) {
+  .currencyForm__InputContainer {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
-.currencyForm__labelText {
+.currencyForm__label {
+  padding: 5px;
   font-weight: 700;
-  padding: 3px;
 }
 
 .currencyForm__inputField {
@@ -58,7 +67,7 @@
   box-shadow: 2px 2px 12px rgb(40, 40, 40);
   border: none;
   font-weight: 700;
-  width: 300px;
+  width: 310px;
   margin: auto 2px;
 }
 
@@ -67,18 +76,43 @@
   justify-content: center;
 }
 
-.currencyForm__score {
-  margin: 25px auto;
+.score {
+  background-color: rgba(255, 255, 255, 0.25);
+  max-width: 900px;
   padding: 10px;
-  max-width: 600px;
+  border-radius: 20px;
+  height: 113px;
+  margin: 10px auto 0;
+  display: grid;
+  grid-template-columns: repeat(20, 5%);
+  grid-template-rows: repeat(5, 20%);
+}
+
+.score__legend {
+  padding: 10px;
+  font-weight: 700;
+  background-color: hsla(0, 0%, 85%, 0.8);
+  border-radius: 8px;
+  color: #000;
+  border: 1px solid black;
+  width: 65px;
+  text-align: center;
+  grid-row-start: 1;
+  grid-row-end: span 2;
+  grid-column-start: 5;
+  z-index: 1;
+}
+
+.scoreResult {
+  font-size: 20px;
+  padding: 20px;
   border-radius: 20px;
   box-shadow: 2px 2px 12px rgb(40, 40, 40);
   border: none;
   background-color: whitesmoke;
-}
-
-.currencyForm__outputScore {
+  height: 60px;
   text-align: center;
-  font-size: 20px;
-  margin: 0;
+  grid-column-start: 4;
+  grid-column-end: 18;
+  grid-row-start: 1;
 }

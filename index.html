@@ -33,7 +33,7 @@
         </legend>
         <div class="currencyForm__InputContainer">
           <label class="currencyForm__label">
-            <span class="currencyForm__labelText">Wpisz kwotę*:</span>
+            Wpisz kwotę*:
             <input
               name="amount"
               type="number"
@@ -45,7 +45,7 @@
           </label>
 
           <label class="currencyForm__label">
-            <span class="currencyForm__labelText">Wybierz walutę*:</span>
+            Wybierz walutę*:
             <select
               name="currency"
               class="currencyForm__selectField js-select"
@@ -67,12 +67,12 @@
           Wyczyść
         </button>
       </div>
-
-      <fieldset class="currencyForm__score">
-        <legend class="currencyForm__legend">Wynik</legend>
-        <p class="currencyForm__outputScore js-score"></p>
-      </fieldset>
       <p class="currencyForm__Description">* - pola wymagane</p>
     </form>
+
+    <div class="score">
+      <div class="score__legend">Wynik</div>
+      <p class="scoreResult js-score"></p>
+    </div>
   </body>
 </html>
