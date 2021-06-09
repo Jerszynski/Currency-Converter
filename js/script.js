@@ -20,22 +20,24 @@
     }
   };
 
-  const score = document.querySelector(".js-score");
+  const scoreElement = document.querySelector(".js-score");
   const clearFormOnClick = () => {
-    score.innerHTML = "";
+    scoreElement.innerHTML = "";
   };
 
   const updateResult = (inputValue, result, currency) => {
-    score.innerHTML = `${inputValue} PLN = ${result.toFixed(2)} ${currency}`;
+    scoreElement.innerHTML = `${inputValue} PLN = ${result.toFixed(
+      2
+    )} ${currency}`;
   };
 
   const onformSubmit = (event) => {
     event.preventDefault();
 
-    const amount = document.querySelector(".js-input");
+    const amountElement = document.querySelector(".js-input");
     const currencyValue = document.querySelector(".js-select");
 
-    const inputValue = +amount.value;
+    const inputValue = +amountElement.value;
     const currency = currencyValue.value;
 
     const result = calculateCurrency(inputValue, currency);
@@ -47,8 +49,8 @@
     const clearForm = document.querySelector(".js-reset");
     clearForm.addEventListener("click", clearFormOnClick);
 
-    const form = document.querySelector(".js-form");
-    form.addEventListener("submit", onformSubmit);
+    const formElement = document.querySelector(".js-form");
+    formElement.addEventListener("submit", onformSubmit);
   };
   init();
 }
